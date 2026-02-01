@@ -1,0 +1,23 @@
+// TEST: Pointer dereferencing
+
+foreign exit :: (code: i32)
+
+main :: () -> i32 {
+    arr : [5]i32
+    arr[0] = 10
+    arr[1] = 20
+    arr[2] = 30
+
+    ptr := ^arr[0]
+
+    if *ptr != 10 {
+        exit(1)
+    }
+
+    *ptr = 99
+    if arr[0] != 99 {
+        exit(2)
+    }
+
+    return 0
+}

@@ -1,0 +1,9 @@
+// TEST: Wrong return type should error
+
+foo :: () -> i32 {
+    return "hello"
+}
+
+main :: () -> i32 {
+    return 0
+}

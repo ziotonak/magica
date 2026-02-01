@@ -1,0 +1,40 @@
+// TEST: Struct literals and field access
+
+foreign exit :: (code: i32)
+
+Point :: struct {
+    x: f32
+    y: f32
+}
+
+Rectangle :: struct {
+    width: i32
+    height: i32
+    area: i32
+}
+
+main :: () -> i32 {
+    p := Point.{ x = 3.0, y = 4.0 }
+
+    if p.x < 2.9 {
+        exit(1)
+    }
+    if p.x > 3.1 {
+        exit(2)
+    }
+
+    p.x = 10.0
+    if p.x < 9.9 {
+        exit(3)
+    }
+    if p.x > 10.1 {
+        exit(4)
+    }
+
+    rect := Rectangle.{ width = 10, height = 5, area = 50 }
+    if rect.area != 50 {
+        exit(5)
+    }
+
+    return 0
+}

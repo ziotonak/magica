@@ -1,0 +1,11 @@
+// TEST: Generic type argument count mismatch should be an error
+
+Vec :: struct(T) {
+    data: ^T
+    len: u64
+}
+
+main :: () -> i32 {
+    v : Vec(i32, i64)
+    return 0
+}

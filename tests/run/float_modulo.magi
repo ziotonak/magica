@@ -1,0 +1,19 @@
+// TEST: Float modulo operator
+
+foreign exit :: (code: i32)
+
+main :: () -> i32 {
+    a := 5.5
+    b := 2.0
+
+    c := a % b
+
+    if c < 1.4 {
+        exit(1)
+    }
+    if c > 1.6 {
+        exit(2)
+    }
+
+    return 0
+}

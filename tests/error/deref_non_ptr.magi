@@ -1,0 +1,7 @@
+// TEST: Dereferencing a non-pointer should error
+
+main :: () -> i32 {
+    a := 42
+    b := *a
+    return 0
+}

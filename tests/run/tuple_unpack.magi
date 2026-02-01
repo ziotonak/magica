@@ -1,0 +1,40 @@
+// TEST: Multiple return values and tuple unpacking
+
+foreign exit :: (code: i32)
+
+divide :: (a: i32, b: i32) -> i32, i32 {
+    return a / b, a % b
+}
+
+minmax :: (a: i32, b: i32) -> i32, i32 {
+    if a < b {
+        return a, b
+    } else {
+        return b, a
+    }
+}
+
+main :: () -> i32 {
+    q, r := divide(17, 5)
+    if q != 3 {
+        exit(1)
+    }
+    if r != 2 {
+        exit(2)
+    }
+
+    _, remainder := divide(100, 7)
+    if remainder != 2 {
+        exit(3)
+    }
+
+    mn, mx := minmax(10, 5)
+    if mn != 5 {
+        exit(4)
+    }
+    if mx != 10 {
+        exit(5)
+    }
+
+    return 0
+}

@@ -1,0 +1,39 @@
+// TEST: Address-of operator for array indexing and field access
+
+foreign exit :: (code: i32)
+
+Point :: struct {
+    x: i32
+    y: i32
+}
+
+main :: () -> i32 {
+    arr : [5]i32
+    arr[0] = 10
+    arr[1] = 20
+    arr[2] = 30
+
+    ptr := ^arr[1]
+    if *ptr != 20 {
+        exit(1)
+    }
+
+    p := Point.{ x = 100, y = 200 }
+
+    px := ^p.x
+    py := ^p.y
+
+    if *px != 100 {
+        exit(2)
+    }
+    if *py != 200 {
+        exit(3)
+    }
+
+    *px = 999
+    if p.x != 999 {
+        exit(4)
+    }
+
+    return 0
+}

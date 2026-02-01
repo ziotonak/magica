@@ -1,0 +1,18 @@
+// TEST: Compile-time constants
+
+foreign exit :: (code: i32)
+
+MAX_SIZE :: 1024
+
+main :: () -> i32 {
+    if MAX_SIZE != 1024 {
+        exit(1)
+    }
+
+    size := 512
+    if !(size < MAX_SIZE) {
+        exit(2)
+    }
+
+    return 0
+}

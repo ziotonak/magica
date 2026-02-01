@@ -1,0 +1,6 @@
+// TEST: Break outside loop should error
+
+main :: () -> i32 {
+    break
+    return 0
+}

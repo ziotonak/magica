@@ -1,0 +1,43 @@
+// TEST: Logical AND/OR short-circuit evaluation
+
+foreign exit :: (code: i32)
+
+main :: () -> i32 {
+    a := true
+    b := true
+    if !(a && b) {
+        exit(1)
+    }
+
+    c := true
+    d := false
+    if c && d {
+        exit(2)
+    }
+
+    e := false
+    f := true
+    if e && f {
+        exit(3)
+    }
+
+    g := false
+    h := false
+    if g || h {
+        exit(4)
+    }
+
+    i := true
+    j := false
+    if !(i || j) {
+        exit(5)
+    }
+
+    k := false
+    l := true
+    if !(k || l) {
+        exit(6)
+    }
+
+    return 0
+}

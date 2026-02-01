@@ -1,0 +1,16 @@
+// TEST: Array slicing
+
+foreign exit :: (code: i32)
+
+main :: () -> i32 {
+    arr : [10]i64
+    for i in 0..10 {
+        arr[i] = i * 10
+    }
+
+    slice := arr[..]
+
+    slice2 := arr[2..5]
+
+    return 0
+}

@@ -1,0 +1,30 @@
+// TEST: Untyped numeric support and constant folding
+
+foreign exit :: (code: i32)
+
+main :: () -> i32 {
+    a := 1
+    b := 2.0
+    c := a + 1
+    d := b + 1.0
+
+    if c != 2 { exit(1) }
+    if d != 3.0 { exit(2) }
+
+    e := 1 + 2.0
+    if e != 3.0 { exit(3) }
+
+    f : i64 = 123
+    g : f32 = 456.0
+
+    if f != 123 { exit(4) }
+    if g != 456.0 { exit(5) }
+
+    h := 1 + 2 * 3
+    if h != 7 { exit(6) }
+
+    i := 10.0 / 2.0 + 1.0
+    if i != 6.0 { exit(7) }
+
+    return 0
+}

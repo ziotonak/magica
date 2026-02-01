@@ -1,0 +1,37 @@
+// TEST: Generic struct instantiation
+
+foreign exit :: (code: i32)
+
+Pair :: struct(T, U) {
+    first: T
+    second: U
+}
+
+Box :: struct(T) {
+    value: T
+}
+
+main :: () -> i32 {
+    p : Pair(i32, i64)
+    p.first = 42
+    p.second = 1000
+
+    if p.first != 42 {
+        exit(1)
+    }
+    if p.second != 1000 {
+        exit(2)
+    }
+
+    b : Box(f32)
+    b.value = 3.14
+
+    if b.value < 3.13 {
+        exit(3)
+    }
+    if b.value > 3.15 {
+        exit(4)
+    }
+
+    return 0
+}

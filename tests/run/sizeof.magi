@@ -1,0 +1,43 @@
+// TEST: sizeof and alignof operators
+
+foreign exit :: (code: i32)
+
+Point :: struct {
+    x: f32
+    y: f32
+}
+
+Big :: struct {
+    a: i64
+    b: i64
+    c: i64
+    d: i64
+}
+
+main :: () -> i32 {
+    if sizeof(i8) != 1 {
+        exit(1)
+    }
+
+    if sizeof(i32) != 4 {
+        exit(2)
+    }
+
+    if sizeof(Point) != 8 {
+        exit(3)
+    }
+
+    if sizeof(Big) != 32 {
+        exit(4)
+    }
+
+    if alignof(i8) != 1 {
+        exit(5)
+    }
+
+    if alignof(i64) != 8 {
+        exit(6)
+    }
+
+    return 0
+}

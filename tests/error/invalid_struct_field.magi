@@ -1,0 +1,8 @@
+// TEST: Invalid struct field name should error
+
+Point :: struct { x: i32, y: i32 }
+
+main :: () -> i32 {
+    p := Point.{ x = 1, z = 2 }
+    return 0
+}

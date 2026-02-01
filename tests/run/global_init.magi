@@ -1,0 +1,26 @@
+// TEST: Global variable initialization
+
+foreign exit :: (code: i32)
+
+global_int := 42
+global_float := 3.14
+global_bool := true
+
+main :: () -> i32 {
+    if global_int != 42 {
+        exit(1)
+    }
+
+    if global_float < 3.13 {
+        exit(2)
+    }
+    if global_float > 3.15 {
+        exit(3)
+    }
+
+    if !global_bool {
+        exit(4)
+    }
+
+    return 0
+}

@@ -1,0 +1,21 @@
+// TEST: Mixed integer type operations
+
+foreign exit :: (code: i32)
+
+main :: () -> i32 {
+    a : i32 = 100
+    b : i64 = 200
+    c := a + b
+    if c != 300 {
+        exit(1)
+    }
+
+    d : i32 = 50
+    e : u32 = cast(u32, 25)
+    f := d - cast(i32, e)
+    if f != 25 {
+        exit(2)
+    }
+
+    return 0
+}

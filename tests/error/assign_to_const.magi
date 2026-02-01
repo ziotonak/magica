@@ -1,0 +1,8 @@
+// TEST: Assigning to constant should error
+
+CONST :: 42
+
+main :: () -> i32 {
+    CONST = 100
+    return 0
+}

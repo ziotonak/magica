@@ -1,0 +1,16 @@
+/magica
+*.o
+*.ll
+*.bc
+*.s
+
+.cache/
+build/
+dist/
+
+.env
+.local
+
+.vscode/
+.idea/
+*.swp

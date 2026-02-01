@@ -1,0 +1,13 @@
+// TEST: If expression with incompatible branch types should be allowed when unused
+
+foreign exit :: (code: i32)
+
+main :: () -> i32 {
+    if true {
+        1
+    } else {
+        1.5
+    }
+
+    return 0
+}

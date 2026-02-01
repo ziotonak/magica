@@ -1,0 +1,23 @@
+// TEST: For loops with ranges
+
+foreign exit :: (code: i32)
+
+main :: () -> i32 {
+    sum : i64 = 0
+    for i in 0..10 {
+        sum = sum + i
+    }
+    if sum != 45 {
+        exit(1)
+    }
+
+    sum2 : i64 = 0
+    for i in 0..=5 {
+        sum2 = sum2 + i
+    }
+    if sum2 != 15 {
+        exit(2)
+    }
+
+    return 0
+}

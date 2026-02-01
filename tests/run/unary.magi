@@ -1,0 +1,33 @@
+// TEST: Unary operators (negation, bitwise NOT)
+
+foreign exit :: (code: i32)
+
+main :: () -> i32 {
+    a := 42
+    b := -a
+    if b != -42 {
+        exit(1)
+    }
+
+    c := -(-a)
+    if c != 42 {
+        exit(2)
+    }
+
+    f := 3.14
+    g := -f
+    if g > -3.13 {
+        exit(3)
+    }
+    if g < -3.15 {
+        exit(4)
+    }
+
+    x : u8 = cast(u8, 0)
+    y := ~x
+    if y != 255 {
+        exit(5)
+    }
+
+    return 0
+}

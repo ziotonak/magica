@@ -1,0 +1,8 @@
+// TEST: Missing struct field in literal should error
+
+Point :: struct { x: i32, y: i32 }
+
+main :: () -> i32 {
+    p := Point.{ x = 1 }
+    return 0
+}

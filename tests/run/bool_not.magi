@@ -1,0 +1,28 @@
+// TEST: Boolean NOT operator
+
+foreign exit :: (code: i32)
+
+main :: () -> i32 {
+    a := false
+    if !(!a) {
+        exit(1)
+    }
+
+    b := true
+    if !b {
+        exit(2)
+    }
+
+    c := true
+    if !(!!c) {
+        exit(3)
+    }
+
+    x := 5
+    y := 3
+    if !(!(x < y)) {
+        exit(4)
+    }
+
+    return 0
+}

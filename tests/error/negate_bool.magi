@@ -1,0 +1,7 @@
+// TEST: Negating a boolean should error
+
+main :: () -> i32 {
+    a := true
+    b := -a
+    return 0
+}

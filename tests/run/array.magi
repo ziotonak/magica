@@ -1,0 +1,30 @@
+// TEST: Array literals and indexing
+
+foreign exit :: (code: i32)
+
+main :: () -> i32 {
+    arr := [1, 2, 3, 4, 5]
+
+    if arr[0] != 1 {
+        exit(1)
+    }
+    if arr[4] != 5 {
+        exit(2)
+    }
+
+    arr[2] = 100
+    if arr[2] != 100 {
+        exit(3)
+    }
+
+    fixed : [3]i64
+    fixed[0] = 1000
+    fixed[1] = 2000
+    fixed[2] = 3000
+
+    if fixed[1] != 2000 {
+        exit(4)
+    }
+
+    return 0
+}

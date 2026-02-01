@@ -1,0 +1,38 @@
+// TEST: Signed comparisons should work correctly
+
+foreign exit :: (code: i32)
+
+main :: () -> i32 {
+    a : i32 = -5
+    b : i32 = 0
+    if !(a < b) {
+        exit(1)
+    }
+
+    c : i32 = -1
+    d : i32 = 1
+    if !(c < d) {
+        exit(2)
+    }
+
+    e : i64 = -100
+    f : i64 = 50
+    if !(e < f) {
+        exit(3)
+    }
+
+    if !(b > a) {
+        exit(4)
+    }
+
+    g : i32 = -10
+    h : i32 = -10
+    if !(g <= h) {
+        exit(5)
+    }
+    if !(g >= h) {
+        exit(6)
+    }
+
+    return 0
+}

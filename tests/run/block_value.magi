@@ -1,0 +1,28 @@
+// TEST: Block expressions return their last value
+
+foreign exit :: (code: i32)
+
+main :: () -> i32 {
+    x := {
+        a := 10
+        b := 20
+        a + b
+    }
+
+    if x != 30 {
+        exit(1)
+    }
+
+    y := {
+        inner := {
+            5 * 5
+        }
+        inner + 1
+    }
+
+    if y != 26 {
+        exit(2)
+    }
+
+    return 0
+}

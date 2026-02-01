@@ -1,0 +1,7 @@
+// TEST: Indexing with non-integer should error
+
+main :: () -> i32 {
+    arr : [10]i32
+    val := arr[3.14]
+    return 0
+}

@@ -1,0 +1,7 @@
+// TEST: Empty match expression should be an error
+
+main :: () -> i32 {
+    x := 5
+    result := match x { }
+    return 0
+}

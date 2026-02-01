@@ -1,0 +1,34 @@
+// TEST: Type casting
+
+foreign exit :: (code: i32)
+
+main :: () -> i32 {
+    f := 3.7
+    i := cast(i32, f)
+    if i != 3 {
+        exit(1)
+    }
+
+    n := 42
+    x := cast(f64, n)
+    if x < 41.9 {
+        exit(2)
+    }
+    if x > 42.1 {
+        exit(3)
+    }
+
+    small : i8 = cast(i8, 100)
+    big := cast(i64, small)
+    if big != 100 {
+        exit(4)
+    }
+
+    neg : i32 = -1
+    u := cast(u32, neg)
+    if u < 4294967290 {
+        exit(5)
+    }
+
+    return 0
+}

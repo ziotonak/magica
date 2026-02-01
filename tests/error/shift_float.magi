@@ -1,0 +1,6 @@
+// TEST: Shift on floats should error
+
+main :: () -> i32 {
+    a := 3.14 << 2
+    return 0
+}

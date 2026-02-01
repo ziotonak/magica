@@ -1,0 +1,9 @@
+// TEST: Missing return in non-void function should error
+
+foo :: () -> i32 {
+    x := 5
+}
+
+main :: () -> i32 {
+    return 0
+}

@@ -1,0 +1,11 @@
+// TEST: Using if expression with incompatible branch types in an assignment should error
+
+main :: () -> i32 {
+    v := if true {
+        1
+    } else {
+        1.5
+    }
+
+    return 0
+}

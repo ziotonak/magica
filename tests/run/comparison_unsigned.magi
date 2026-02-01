@@ -1,0 +1,21 @@
+// TEST: Unsigned integer comparisons
+
+foreign exit :: (code: i32)
+
+main :: () -> i32 {
+    a : u32 = cast(u32, 5)
+    b : u32 = cast(u32, 10)
+
+    if !(a < b) {
+        exit(1)
+    }
+
+    c : u32 = cast(u32, 4294967295)
+    d : u32 = cast(u32, 100)
+
+    if !(c > d) {
+        exit(2)
+    }
+
+    return 0
+}

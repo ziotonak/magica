@@ -1,0 +1,10 @@
+// TEST: Comparing incompatible pointer types should be an error
+
+Point :: struct { x: i32, y: i32 }
+
+main :: () -> i32 {
+    a : ^i32 = null
+    b : ^Point = null
+    result := a == b
+    return 0
+}

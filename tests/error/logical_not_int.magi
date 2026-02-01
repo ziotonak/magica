@@ -1,0 +1,7 @@
+// TEST: Logical not on int should error
+
+main :: () -> i32 {
+    a := 42
+    b := !a
+    return 0
+}

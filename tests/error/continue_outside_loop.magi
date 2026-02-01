@@ -1,0 +1,6 @@
+// TEST: Continue outside loop should error
+
+main :: () -> i32 {
+    continue
+    return 0
+}
